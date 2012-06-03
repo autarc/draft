@@ -10,28 +10,37 @@ draft('module:network',{
 	},
 
 
-	/* Loads + execute a script */
+	/* loads + execute a script */
 
 	loadScript: function( path, callback ) {
 
 		var script = document.createElement('script');
+
 		script.setAttribute('type', 'text/javascript');
 
-		if ( script.readyState ) {
+		if ( script.addEventListener ) { // normal browsers
 
-			script.onreadystatechange = function(){
+			script.addEventListener('load', function(){
+
 				callback();
-			};
+			});
 
 		} else {
 
-			script.onload = function(){
-				callback();
+			script.onreadystatechange = function() { // IE
+
+				if ( script.readyState in { loaded: 1, complete: 1}) {
+
+					js.onreadystatechange = null;
+
+					callback();
+				}
 			};
 		}
 
 		script.src = path;
-		document.getElementsByTagName('HEAD')[0].appendChild( script );
+
+		document.getElementsByTagName('script')[0].parentNode.insertBefore( script );
 	}
 
 });
