@@ -1,0 +1,3 @@
+[submodule "src/_libs/game-shim"]
+	path = src/_libs/game-shim
+	url = https://github.com/toji/game-shim.git
