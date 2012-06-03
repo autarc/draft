@@ -1,0 +1,27 @@
+{
+	"title"			: "draft.js",
+
+  	"name"			: "draft",
+
+	"version"		: "0.1",
+
+	"author"		: "Autarc",
+
+	"description"	: "A bundle of tools for creating rapid protoypes on the web",
+
+	"homepage"		: "http://github.com/autarc/draft",
+
+	"repository"	: {
+						"type"	: "git",
+						"url"	: "http://github.com/autarc/draft.git"
+					  },
+
+	"bugs"			: {
+						"url"	: "http://github.com/autarc/draft/issues"
+					  },
+
+	"licenses"		: {
+						"type"	: "☺ Licence",
+						"url"	: "http://licence.visualidiot.com/"
+				  }
+}
